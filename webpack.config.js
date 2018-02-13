@@ -1,7 +1,7 @@
 module.exports = {
-    entry: './app/App.js',
+    entry: './src/index.js',
     output: {
-        path: './public',
+        path: `${__dirname}/public`,
         filename: 'bundle.js'
     },
     devServer: {
@@ -11,9 +11,9 @@ module.exports = {
     },
     module: {
         loaders: [{
-            test: /\.js$/,
+            test: /\.jsx?$/,
             exclude: /node_modules/,
-            loader: 'babel',
+            loader: 'babel-loader',
             query: {
                 presets: ['es2015', 'react']
             }
